@@ -77,11 +77,16 @@ window.renderValue = function (key, value) {
 
   return value ?? "";
 };
-window.customaction = function (i, data_id,classbtn) {
+window.customaction = function (i, data_id, classbtn, opts) {
+  opts = opts || {};
   const dataIdAttr =
     data_id !== undefined && data_id !== null && String(data_id).trim() !== ""
       ? ` data-id="${data_id}"`
       : "";
+
+  const grafikButton = opts.grafik
+    ? `<button class="btn btn-info btn-sm ${classbtn}"${dataIdAttr}><i class="fas fa-chart-bar"></i></button>`
+    : "";
 
   const middleButton =
     String(i) === "1"
@@ -91,13 +96,14 @@ window.customaction = function (i, data_id,classbtn) {
   return `
     <td>
       <button class="btn btn-success btn-sm ${classbtn}"${dataIdAttr}><i class="fas fa-search"></i></button>
+      ${grafikButton}
       ${middleButton}
       <button class="btn btn-danger btn-sm ${classbtn}"${dataIdAttr}><i class="fas fa-trash"></i></button>
     </td>
   `;
 };
 
-window.renderTable = function (selector, data,i='0',classbtn="") {
+window.renderTable = function (selector, data, i='0', classbtn="", opts) {
   const $table = $(selector);
 
   if ($.fn.DataTable.isDataTable($table)) {
@@ -126,7 +132,7 @@ const tbody = `
       return `
         <tr>
           ${keys.map(k => `<td>${renderValue(k, row[k])}</td>`).join('')}
-          ${customaction(i, dataId,classbtn)}
+          ${customaction(i, dataId, classbtn, opts)}
         </tr>
       `;
     }).join('')}

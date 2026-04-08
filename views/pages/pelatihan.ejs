@@ -1,7 +1,7 @@
 <h1 class="h3 mb-4 text-gray-800">Pelatihan</h1>
 
 <!-- Table Example -->
-<div class="card shadow mb-4">
+<div class="card shadow mb-4" id="card-pelatihan-table">
   <div class="card-header py-3 d-flex justify-content-between align-items-center">
   <h6 class="m-0 font-weight-bold text-primary" id="content-title-pelatihan"></h6>
 
@@ -17,10 +17,58 @@
   </div>
 </div>
 
+<!-- Grafik View (hidden by default) -->
+<div class="card shadow mb-4" id="card-pelatihan-grafik" style="display:none;">
+  <div class="card-header py-3 d-flex justify-content-between align-items-center">
+    <h6 class="m-0 font-weight-bold text-primary" id="content-title-grafik">Grafik Penilaian</h6>
+    <div>
+      <button class="btn btn-sm btn-secondary" id="btn-back-grafik-pelatihan">
+        <i class="fas fa-arrow-left"></i> Kembali
+      </button>
+      <button class="btn btn-sm btn-outline-dark" id="btn-print-tabel-grafik-pelatihan" style="display:none;">
+        <i class="fas fa-print"></i> Print Tabel
+      </button>
+      <button class="btn btn-sm btn-primary" id="btn-refresh-grafik-pelatihan" style="display:none;">
+        <i class="fas fa-sync"></i> Refresh
+      </button>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-6 mb-4">
+        <div class="border rounded p-3">
+          <div class="font-weight-bold mb-2">I. Materi Pelatihan (1-5)</div>
+          <div id="chart-global-1-5"></div>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-4">
+        <div class="border rounded p-3">
+          <div class="font-weight-bold mb-2">III. Sarana / Prasarana (24-42)</div>
+          <div id="chart-global-24-42"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border rounded p-3 mb-4">
+      <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap" style="gap: 12px;">
+        <div class="font-weight-bold">II. Tenaga Pelatih (6-23)</div>
+        <div class="d-flex align-items-center" style="gap: 8px;">
+          <label class="mb-0 small text-muted" for="select-tenaga-grafik">Instruktur</label>
+          <select class="form-control form-control-sm" id="select-tenaga-grafik" style="min-width: 260px;"></select>
+        </div>
+      </div>
+      <div id="chart-tenaga-6-23"></div>
+    </div>
+
+    <!-- Tabel review (yang boleh di print) -->
+    <div id="grafik-content-pelatihan"></div>
+  </div>
+</div>
+
 
 <div class="modal fade" id="modal-data-pelatihan" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
+  <div class="modal-content">
 
       <!-- MODAL HEADER -->
       <div class="modal-header">

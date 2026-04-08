@@ -1,0 +1,57 @@
+﻿<div class="modal fade" id="modal-2fa" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Google Authenticator (2FA)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="alert alert-info mb-3">
+          Scan QR ini pakai aplikasi Google Authenticator, lalu masukkan kode 6 digit untuk aktivasi.
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 text-center mb-3">
+            <div class="border rounded p-2 bg-white">
+              <div id="twofa-qr-canvas" style="display:none; min-height:240px; align-items:center; justify-content:center;"></div>
+              <img id="twofa-qr" src="" alt="QR" style="max-width: 100%; height: auto; display:none;" />
+              <div id="twofa-qr-placeholder" class="text-muted" style="min-height:240px; display:flex; align-items:center; justify-content:center;">
+                QR belum dibuat
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-outline-primary btn-sm mt-2" id="btn-generate-2fa">
+              Generate QR
+            </button>
+          </div>
+
+          <div class="col-md-7">
+            <div class="form-group">
+              <label>Secret (manual)</label>
+              <input type="text" class="form-control" id="twofa-secret" readonly>
+              <small class="form-text text-muted">Kalau QR gagal discan, kamu bisa input secret ini manual di Authenticator.</small>
+            </div>
+
+            <div class="form-group">
+              <label>Kode 6 digit</label>
+              <input type="text" class="form-control" id="twofa-code" inputmode="numeric" maxlength="6" placeholder="123456">
+            </div>
+
+            <button type="button" class="btn btn-primary" id="btn-verify-2fa">
+              Verifikasi & Aktifkan
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+      </div>
+
+    </div>
+  </div>
+</div>

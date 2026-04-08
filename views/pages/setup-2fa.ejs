@@ -1,0 +1,47 @@
+<h1 class="h3 mb-4 text-gray-800">Setup 2FA</h1>
+
+<div class="card shadow mb-4">
+  <div class="card-header py-3 d-flex justify-content-between align-items-center">
+    <h6 class="m-0 font-weight-bold text-primary">Google Authenticator</h6>
+  </div>
+
+  <div class="card-body">
+    <div class="alert alert-info">
+      Akun kamu belum mengaktifkan 2FA. Scan QR ini pakai aplikasi Google Authenticator, lalu masukkan kode 6 digit untuk aktivasi.
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 text-center mb-3">
+        <div class="border rounded p-2 bg-white">
+          <div id="setup-twofa-qr-canvas" style="display:none; min-height:240px; align-items:center; justify-content:center;"></div>
+          <img id="setup-twofa-qr" src="" alt="QR" style="max-width: 100%; height: auto; display:none;" />
+          <div id="setup-twofa-qr-placeholder" class="text-muted" style="min-height:240px; display:flex; align-items:center; justify-content:center;">
+            QR belum dibuat
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-outline-primary btn-sm mt-2" id="setup-btn-generate-2fa">
+          Generate QR
+        </button>
+      </div>
+
+      <div class="col-md-8">
+        <div class="form-group">
+          <label>Secret (manual)</label>
+          <input type="text" class="form-control" id="setup-twofa-secret" readonly>
+          <small class="form-text text-muted">Kalau QR gagal discan, input secret ini manual di Google Authenticator.</small>
+        </div>
+
+        <div class="form-group">
+          <label>Kode 6 digit</label>
+          <input type="text" class="form-control" id="setup-twofa-code" inputmode="numeric" maxlength="6" placeholder="123456">
+        </div>
+
+        <button type="button" class="btn btn-primary" id="setup-btn-verify-2fa">
+          Verifikasi & Aktifkan
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

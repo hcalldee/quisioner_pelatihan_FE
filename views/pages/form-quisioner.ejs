@@ -1,0 +1,83 @@
+<h1 class="h3 mb-4 text-gray-800">Form Quisioner</h1>
+
+<!-- Table Example -->
+<div class="card shadow mb-4" >
+  <div class="card-header py-3 d-flex justify-content-between align-items-center">
+  <h6 class="m-0 font-weight-bold text-primary" id="content-title"></h6>
+</div>
+  <div class="card-body" style="height: 450px; overflow-y: auto;" id="form-content">
+    <div id="bag-konfirmasi" >
+      <table>
+        <thead>
+          <tr>
+            <td class="text-start">
+              <img src="https://kemnaker.go.id/assets/images/logo-color.png" alt="" class="img-fluid w-50">
+            </td>
+          </tr>
+        </thead>
+      </table>
+      <br><br>
+      <h3 class="text-center"><b>EVALUASI PENYELENGGARAAN PELATIHAN</b></h3>
+      <P class="text-start">
+        Dalam rangka meningkatkan mutu penyelenggaraan pelatihan dimasa mendatang, serta pengukuran kepuasan pelanggan maka kami mohon kesediaan Anda untuk mengisi kuisioner ini dengan memberikan penilaian yang sejujurnya. Penilaian anda dijamin kerahasiaannya. Terimakasih
+      </P>
+      <br><br>
+      <p class="text-start">
+        Keterangan :
+      </p>
+        <ul>5 : Baik Sekali</ul>
+        <ul>4 : Baik</ul>
+        <ul>3 : Cukup/Sedang</ul>
+        <ul>2 : Kurang Baik</ul>
+        <ul>1 : Tidak Baik</ul>
+    </div>
+
+    <div class="table-responsive" id="bag-data" hidden>
+        <table class="table table-bordered border-primary">
+          <tbody>
+            <tr>
+              <td style="width: 20%;">
+                <div class="form-group">
+                  <label>Sumber Informasi</label>
+                  <select id="informasi" class="form-control jawaban-rating"></select>
+                </div>
+              </td>
+              <td  style="width: 30%;">
+                  <div class="form-group">
+                    <label>Nama Pelatihan</label>
+                    <select id="pelatihan" class="form-control jawaban-rating"></select>
+                  </div>
+              </td>
+              <td style="width: 20%;">
+                <div class="form-group">
+                  <label>Tanggal Pelatihan</label>
+                  <textarea  class="form-control" id="tanggal" disabled></textarea>
+                </div>
+              </td>
+              <td style="width: 15%;">
+                <label>Instruktur</label>
+                  <div class="form-content" id="data-instruktur">
+                  </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    <div class="row" id="bag-quisioner" hidden>
+        <table class="table table-bordered border-primary" id="tabel-rating" >
+          <tbody>
+  
+          </tbody>
+        </table>
+    </div>
+
+  </div>
+
+  <div class="card-footer" id="form-footer">
+    <div class="row justify-content-end">
+      <button class="btn btn-primary" id="btn-navigation-a">Mengerti, Lanjutkan</button>
+    </div>
+  </div>
+</div>
+
